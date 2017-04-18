@@ -2,22 +2,25 @@
 // and returns the average value of the odd numbers in the list
 // Create basic unit tests for it with at least 3 different test cases
 
+import java.util.ArrayList;
+
 public class OddAvg {
-  public static void main(String[] args) {
-    int[] myList = {1, 2, 3, 4, 5, 9};
-    System.out.println(oddAverage(myList));
+  private ArrayList<Integer> numbers;
+
+  public OddAvg(ArrayList<Integer> numbers) {
+    this.numbers = numbers;
   }
 
-  public static double oddAverage(int[] numberList) {
-    double sumOdds = 0;
-    double numberOfOdds = 0;
-    for (Integer x : numberList) {
-      if (x % 2 != 0) {
+  public double oddAverage() {
+    int sumOdds = 0;
+    int numberOfOdds = 0;
+    for (int i = 0; i < numbers.size(); i++) {
+      if (i % 2 != 0) {
         numberOfOdds++;
-        sumOdds += x;
+        sumOdds += i;
       }
     }
-    double averageOfOdd = sumOdds / numberOfOdds;
-    return averageOfOdd;
+    double averageOfOdds = sumOdds / numberOfOdds;
+    return averageOfOdds;
   }
 }
