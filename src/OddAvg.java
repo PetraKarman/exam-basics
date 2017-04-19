@@ -15,12 +15,12 @@ public class OddAvg {
     int sumOdds = 0;
     int numberOfOdds = 0;
     for (int i = 0; i < numbers.size(); i++) {
-      if (i % 2 != 0) {
+      if (numbers.get(i) % 2 != 0) {
         numberOfOdds++;
         sumOdds += i;
       }
     }
-    double averageOfOdds = sumOdds / numberOfOdds;
+    double averageOfOdds = sumOdds / (double)numberOfOdds;
     return averageOfOdds;
   }
 }
